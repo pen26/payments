@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" xmlns="http://www.w3.org/1999/html">
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <title>Szczegóły usługi</title>
+
+</head>
+<body>
+<h2>Wszystkie wpisy</h2>
+<div th:each="task : ${tasks}">
+    <div>
+        <h5 th:text="${task.title}"/>
+        <p><span th:text="|Data i godzina przyjęcia zlecenia: , ${task.begdateTime}!|"></span></p>
+        <p th:text="${task.custcontent}"/>
+        <p th:text="${task.emcontent}"/>
+        <div th:text="${task.employee}"/>
+        <p><span th:text="|Data i godzina zamknięcia zlecenia: , ${task.clodateTime}!|"></span></p>
+        <hr/>
+    </div>
+</div>
+
+</body>
+</html>
